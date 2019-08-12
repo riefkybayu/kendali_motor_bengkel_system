@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="212d2eff-6d0b-4045-862d-a4171516407c">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="tanggal_1" class="java.lang.String"/>
+	<parameter name="tanggal_2" class="java.lang.String"/>
+	<parameter name="LOGO" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select transaksi_jasa.no_trans_jasa, transaksi_jasa.no_trans_jasa, transaksi_jasa.no_jasa, transaksi_jasa.tanggal, jasa.nama_jasa, jasa.harga_jasa from jasa, transaksi_jasa where transaksi_jasa.no_jasa=jasa.no_jasa and transaksi_jasa.tanggal >=$P{tanggal_1}  and transaksi_jasa.tanggal <=$P{tanggal_2} ORDER BY transaksi_jasa.no_trans_jasa ASC;]]>
+	</queryString>
+	<field name="no_trans_jasa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_jasa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_jasa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_jasa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement x="267" y="58" width="25" height="20" uuid="35a150dd-5c38-47bc-b6cd-2d298321e172"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="59" width="84" height="20" uuid="5c450f30-6ad1-4ec6-b404-98e087b4cd3f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{tanggal_2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="129" y="17" width="291" height="23" uuid="6578b71c-852e-47db-aee3-23e150684bee"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PENJUALAN JASA PERIODIK]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="188" y="58" width="79" height="20" uuid="8748368e-46c7-4d41-9d94-44d62a5e9f60"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{tanggal_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="107" y="40" width="371" height="20" uuid="fc4b816a-c46d-4ba5-b552-da1177d25016"/>
+				<text><![CDATA[Jl.Karangrayung No.24 RT 1/RW 1, Purwodadi, Grobongan, Jawa Tengah.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="89" width="555" height="1" uuid="8f2ed8af-6a78-4da6-8780-30aa76a4d518"/>
+			</line>
+			<image>
+				<reportElement x="47" y="0" width="60" height="60" uuid="c1779434-fd97-40d8-a5ed-a0d9fa87e40d"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="206" y="0" width="61" height="20" backcolor="#CCCCCC" uuid="3d2562c6-ed66-4c90-8351-44aa33132ca1"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No. Trans]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="267" y="0" width="53" height="20" backcolor="#CCCCCC" uuid="ef9c59f7-d5c0-45d8-a62c-2ee65c611656"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ID Jasa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="32" y="0" width="174" height="20" backcolor="#CCCCCC" uuid="fdc540e0-c360-41da-94e6-7b6d6628ce2a"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="320" y="0" width="100" height="20" backcolor="#CCCCCC" uuid="6b14f0e9-db14-40b0-9a0a-ea3802be051f"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Jasa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="420" y="0" width="100" height="20" backcolor="#CCCCCC" uuid="ce18c320-1ab7-4c58-9fb6-a578aeef2660"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Harga Jasa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="206" y="0" width="61" height="20" backcolor="#CDCDFF" uuid="69866851-3464-4a95-95aa-3fa51f9971ea"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{no_trans_jasa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="267" y="0" width="53" height="20" backcolor="#CDCDFF" uuid="f58d2d1d-0587-4499-88d0-70f0f6f42cb8"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{no_jasa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="32" y="0" width="174" height="20" backcolor="#CDCDFF" uuid="b38eb313-4a64-48f7-8760-3dd2d0732823"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("kk:mm:ss, dd-MMMM-yyyy", new java.util.Locale("id")).format($F{tanggal})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="320" y="0" width="100" height="20" backcolor="#CDCDFF" uuid="0d3c412f-bf13-45fc-aef2-5add6513c6ac"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama_jasa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="420" y="0" width="100" height="20" backcolor="#CDCDFF" uuid="5697d5b9-3c76-4b04-977f-72a0f12e85fd"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{harga_jasa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="96" splitType="Stretch">
+			<staticText>
+				<reportElement x="395" y="76" width="16" height="20" uuid="6fb854c1-8946-4945-946c-503b8227395c"/>
+				<text><![CDATA[(]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="14" width="57" height="20" uuid="30629447-01dc-477e-b6e6-6753bf3d5ab5"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Purwodadi,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="521" y="76" width="19" height="20" uuid="6dca1a99-756a-4776-bd81-a46eff34c62e"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="76" width="110" height="20" uuid="fdb3b555-dc04-4504-8667-cd73c54eb5fc"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<text><![CDATA[Pemilik Bengkel]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="433" y="14" width="122" height="20" uuid="affc8296-a540-4705-a268-54ddff5d7089"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEEEE dd MMMM yyyy", new java.util.Locale("id")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
